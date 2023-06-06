@@ -9,6 +9,15 @@ public class MyController {
 
     @GetMapping("/")
     public String welcomePage(){
-        return "index2";
+        return "first_page";
+    }
+    @GetMapping("/starting")
+    public String startingPage(){
+        return "starting_page";
+    }
+
+    @GetMapping("/game")
+    public String gamePage(){
+        return "game_page";
     }
 }
