@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/dfl")
 public class MyController {
 
     @GetMapping("/first")
@@ -23,7 +22,6 @@ public class MyController {
         model.addAttribute("secondLover", new Lover());
         model.addAttribute("thirdLover", new Lover());
         model.addAttribute("fourthLover", new Lover());
-
         return "starting_page";
     }
 
@@ -41,7 +39,7 @@ public class MyController {
 //        return "game_page";
 //    }
 
-    @GetMapping("/game")
+    @PostMapping("/game")
     public String gamePage(@ModelAttribute("firstLover") Lover firstLover,
                            @ModelAttribute("secondLover") Lover secondLover,
                            @ModelAttribute("thirdLover") Lover thirdLover,

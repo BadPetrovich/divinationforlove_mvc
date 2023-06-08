@@ -15,9 +15,9 @@
         На данном сайте вы можете узнать имя вашего <span style="color: aqua">возлюбленного</span>. Карты подскажут!
     </p>
 
-    <form action ="#" th:action="@{/dfl/game}" th:object="${firstLover}" method="get">
-        <label for="Name">Name</label>
-        <input type="text" th:field="*{name}" id="Name" placeholder="Имя">
+    <form action ="#" th:action="@{/game}" th:object="${firstLover}" method="post">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="Имя">
         <input type="submit" value="Отправить">
     </form>
     
