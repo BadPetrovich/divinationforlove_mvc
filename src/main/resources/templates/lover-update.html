@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DivinationForLove</title>
+</head>
+<body>
+<form action="#" th:action="@{/lover-update}" th:object="${lover}" method="post">
+    <label for="id">Номер любовника</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="Номер">
+    <br/>
+    <label for="first_name">Имя любовника</label>
+    <input type="text" th:field="*{name}" id="first_name" placeholder="Имя">
+    <br/>
+    <input type="submit" value="Изменить">
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DivinationForLove</title>
+</head>
+<body>
+<div th:switch="${lovers}">
+    <h2 th:case="null">Любовников нет!</h2>
+    <div th:case="*">
+        <h2>Любовник</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Имя</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="lover : ${lovers}">
+                <td th:text="${lover.id}"></td>
+                <td th:text="${lover.name}"></td>
+                <td><a th:href="@{lover-update/{id}(id=${lover.id})}">Изменить</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<!--    <p><a href="/lover-create">Начать игру</a></p>-->
+</div>
+</body>
+</html>
