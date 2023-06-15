@@ -38,40 +38,10 @@ public class MyController {
     }
 
 
+
+
     @GetMapping("/first")
     public String welcomePage(){
         return "first_page";
-    }
-    @GetMapping("/starting2")
-    public String startingPage(Model model){
-
-        model.addAttribute("firstLover", new Lover());
-        model.addAttribute("secondLover", new Lover());
-        model.addAttribute("thirdLover", new Lover());
-        model.addAttribute("fourthLover", new Lover());
-        return "starting2_page";
-    }
-
-//    @GetMapping("/game")
-//    public String gamePage(HttpServletRequest request, Model model){
-//
-//        String loverName = request.getParameter("firstName");
-//        model.addAttribute("firstName", loverName);
-//        loverName = request.getParameter("secondName");
-//        model.addAttribute("secondName", loverName);
-//        loverName = request.getParameter("thirdName");
-//        model.addAttribute("thirdName", loverName);
-//        loverName = request.getParameter("fourthName");
-//        model.addAttribute("fourthName", loverName);
-//        return "game_page";
-//    }
-
-    @PostMapping("/game")
-    public String gamePage(@ModelAttribute("firstLover") Lover firstLover,
-                           @ModelAttribute("secondLover") Lover secondLover,
-                           @ModelAttribute("thirdLover") Lover thirdLover,
-                           @ModelAttribute("fourthLover") Lover fourthLover){
-
-        return "game_page";
     }
 }

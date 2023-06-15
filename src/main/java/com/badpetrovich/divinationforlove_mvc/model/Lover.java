@@ -15,8 +15,11 @@ public class Lover {
     private int id;
     @Column(name = "first_name")
     private String name;
+//    @Column(name = "game_deck")
+//    private String[] myDeck;
 
-//    private List<String> myDeck = new ArrayList<>();
+//    private List<String> myDeck;
+//            = new ArrayList<>();
 
 //    public Lover() {
 //    }

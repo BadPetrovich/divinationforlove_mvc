@@ -22,12 +22,12 @@
             <tr th:each="lover : ${lovers}">
                 <td th:text="${lover.id}"></td>
                 <td th:text="${lover.name}"></td>
-                <td><a th:href="@{lover-update/{id}(id=${lover.id})}">Изменить</a></td>
+                <td><a th:href="@{lover-delete/{id}(id=${lover.id})}">Удалить</a></td>
             </tr>
             </tbody>
         </table>
     </div>
-    <p><a href="/game">Начать игру</a></p>
+<!--    <p><a href="/game">Начать игру</a></p>-->
 </div>
 </body>
 </html>
