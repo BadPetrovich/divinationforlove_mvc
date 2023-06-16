@@ -7,6 +7,15 @@
     <title>DivinationForLove</title>
 </head>
 <body>
+<form action="#" th:action="@{/game-update}" th:object="${lover}" method="post">
+    <label for="id">Номер любовника</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="Номер">
+    <br/>
+    <label for="first_name">Имя любовника</label>
+    <input type="text" th:field="*{name}" id="first_name" placeholder="Имя">
+    <br/>
+    <input type="submit" value="Изменить">
+</form>
 <div th:switch="${lovers}">
     <h2 th:case="null">Любовников нет!</h2>
     <div th:case="*">
@@ -16,7 +25,6 @@
             <tr>
                 <th>Номер</th>
                 <th>Имя</th>
-                <th>Колода</th>
             </tr>
             </thead>
             <tbody>
@@ -24,7 +32,6 @@
                 <td th:text="${lover.id}"></td>
                 <td th:text="${lover.name}"></td>
                 <td th:text="${lover.myDeck}"></td>
-<!--                <td><a th:href="@{game-update/{id}(id=${lover.id})}">Заполнить колоду</a></td>-->
                 <td><a th:href="@{lover-delete/{id}(id=${lover.id})}">Удалить</a></td>
             </tr>
             </tbody>

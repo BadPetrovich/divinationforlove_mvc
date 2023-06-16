@@ -15,8 +15,8 @@ public class Lover {
     private int id;
     @Column(name = "first_name")
     private String name;
-//    @Column(name = "game_deck")
-//    private String[] myDeck;
+    @Column(name = "deck")
+    private String[] myDeck;
 
 //    private List<String> myDeck;
 //            = new ArrayList<>();
@@ -24,19 +24,23 @@ public class Lover {
 //    public Lover() {
 //    }
 //
-//    public void getCardToBuffer(int boundOfRandom, List<String> cards){
-//
-//        Random random = new Random();
-//        int randomCard;
-//
-//        for(int i = 0; i<8; i++){
-//            randomCard = random.nextInt(boundOfRandom);
+    public void getCardToBuffer(int boundOfRandom, List<String> cards){
+
+        Random random = new Random();
+        int randomCard;
+
+        for(int i = 0; i<8; i++){
+            randomCard = random.nextInt(boundOfRandom);
+            myDeck[i]=cards.get(randomCard);
 //            myDeck.add(cards.get(randomCard));
-//            cards.remove(randomCard);
-//            boundOfRandom--;
-//        }
-//        myDeck.sort(new CardComparator());
-//    }
+            cards.remove(randomCard);
+            boundOfRandom--;
+        }
+        Arrays.sort(myDeck, new CardComparator());
+//        List<String> deckBuffer = Arrays.asList(myDeck);
+//        deckBuffer.sort(new CardComparator());
+//        myDeck = (String[]) deckBuffer.toArray();
+    }
 //
 //    public void setName(String name) {
 //        this.name = name;
@@ -54,13 +58,13 @@ public class Lover {
 //       myDeck.removeAll(myDeck);
 //    }
 //
-//    @Override
-//    public String toString() {
-//        return "Lover{" +
-//                "name='" + name + '\'' +
-//                ", myDeck=" + myDeck +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Lover{" +
+                "name='" + name + '\'' +
+                ", myDeck=" + myDeck +
+                '}';
+    }
 //
 //    @Override
 //    public boolean equals(Object o) {
