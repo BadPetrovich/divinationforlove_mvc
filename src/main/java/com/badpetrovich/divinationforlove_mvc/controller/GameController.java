@@ -32,11 +32,14 @@ public class GameController {
         Collections.shuffle(lovers);
         gameService.getCardToLover(lovers,cardsBuffer);
         model.addAttribute("lovers",lovers);
+        model.addAttribute("cards",cardsBuffer);
         return "game";
     }
 
     @GetMapping("/lover-delete/{id}")
-    public String deleteLoverFromGame(@PathVariable("id") Integer id) {
+    public String deleteLoverFromGame(@PathVariable("id") Integer id) throws Exception {
+        String[] loverCardBuffer = loverService.findById(id).getMyDeck();
+        List<Card> allCardsBuffer = gameService.findAll();
         loverService.deleteById(id);
         return "redirect:/game";
     }

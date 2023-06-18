@@ -24,7 +24,7 @@ public class Lover {
 //    public Lover() {
 //    }
 //
-    public void getCardToBuffer(int boundOfRandom, List<String> cards){
+    public void getCardToDeck(int boundOfRandom, List<String> cards){
 
         Random random = new Random();
         int randomCard;
@@ -32,7 +32,6 @@ public class Lover {
         for(int i = 0; i<8; i++){
             randomCard = random.nextInt(boundOfRandom);
             myDeck[i]=cards.get(randomCard);
-//            myDeck.add(cards.get(randomCard));
             cards.remove(randomCard);
             boundOfRandom--;
         }

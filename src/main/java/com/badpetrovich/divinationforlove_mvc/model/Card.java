@@ -3,6 +3,9 @@ package com.badpetrovich.divinationforlove_mvc.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "cards")
@@ -17,6 +20,8 @@ public class Card {
     public String getCard() {
         return card;
     }
+
+//    List<Card> cards = new ArrayList<>();
 
     //    private List<String> myDeck;
 //            = new ArrayList<>();

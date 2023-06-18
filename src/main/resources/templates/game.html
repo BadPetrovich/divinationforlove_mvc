@@ -23,7 +23,7 @@
             <tr th:each="lover : ${lovers}">
                 <td th:text="${lover.id}"></td>
                 <td th:text="${lover.name}"></td>
-                <td th:text="${lover.myDeck}"></td>
+                <td th:each="deck : ${lover.myDeck}" th:text="${deck}"></td>
 <!--                <td><a th:href="@{game-update/{id}(id=${lover.id})}">Заполнить колоду</a></td>-->
                 <td><a th:href="@{lover-delete/{id}(id=${lover.id})}">Удалить</a></td>
             </tr>

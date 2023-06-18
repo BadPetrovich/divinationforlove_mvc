@@ -40,10 +40,9 @@ public class GameService {
         for(int i=0;i<cardsBuffer.size();i++){
             cards.add((cardsBuffer.get(i).getCard()));
         }
-        Collections.shuffle(cards);
         for(int i = 0; i<lovers.size();i++){
             int boundOfRandom=cards.size();
-            lovers.get(i).getCardToBuffer(boundOfRandom, cards);
+            lovers.get(i).getCardToDeck(boundOfRandom, cards);
         }
     }
 
